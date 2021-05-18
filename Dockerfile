@@ -1,5 +1,11 @@
 FROM ubuntu:latest
 
+LABEL org.label-schema.vendor="AWS tools with kubectl" \
+      org.label-schema.name="AWS tools with kubectl" \
+      org.label-schema.description="AWS tools with kubectl" \
+      org.label-schema.schema-version="1.0" \
+      org.opencontainers.image.source="https://github.com/rieset/aws-kubectl"
+
 ENV DEBIAN_FRONTEND=noninteractive
 
 # Install packages
