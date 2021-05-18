@@ -1,1 +1,1 @@
-# aws-kubectl
+# AWS image from deploy with kubectl
