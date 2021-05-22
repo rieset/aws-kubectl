@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM gcr.io/google.com/cloudsdktool/cloud-sdk:latest
 
 LABEL org.label-schema.vendor="AWS tools with kubectl" \
       org.label-schema.name="AWS tools with kubectl" \
