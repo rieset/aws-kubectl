@@ -1,1 +1,1 @@
-# AWS image for deploy with kubectl
+# Kubernates tools
