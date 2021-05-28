@@ -4,7 +4,7 @@ LABEL org.label-schema.vendor="AWS tools with kubectl" \
       org.label-schema.name="AWS tools with kubectl" \
       org.label-schema.description="AWS tools with kubectl" \
       org.label-schema.schema-version="1.0" \
-      org.opencontainers.image.source="https://github.com/rieset/aws-kubectl"
+      org.opencontainers.image.source="https://github.com/rieset/kubernates-tools"
 
 ENV DEBIAN_FRONTEND=noninteractive
 
