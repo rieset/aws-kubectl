@@ -20,6 +20,8 @@ RUN unzip awscliv2.zip
 RUN curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 && \
     chmod 700 get_helm.sh && \
     ./get_helm.sh
+
+RUN helm plugin install https://github.com/reactiveops/autohelm
     
 RUN curl -L https://github.com/Praqma/helmsman/releases/download/v3.7.0/helmsman_3.7.0_linux_amd64.tar.gz | tar zx && \
     mv helmsman /usr/local/bin/helmsman    
