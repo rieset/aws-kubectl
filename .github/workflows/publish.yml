@@ -27,7 +27,7 @@ jobs:
       -
         name: Create tag image
         run: |
-          echo "GHCR_IMAGE=${{ env.GHCR_REGISTRY_HOST }}/${GITHUB_REPOSITORY,,}:${GITHUB_REF#refs/tags/}" >> ${GITHUB_ENV}
+          echo "GHCR_IMAGE=${{ env.GHCR_REGISTRY_HOST }}/${GITHUB_REPOSITORY,,}:${GITHUB_REF##*/}" >> ${GITHUB_ENV}
 
       -
         name: Set up QEMU
