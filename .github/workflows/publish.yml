@@ -1,7 +1,8 @@
 name: Publish branch image
 
 on:
-  push
+  release:
+    types: [published]
 
 env:
   # https://github.com/features/packages
@@ -10,9 +11,7 @@ env:
   GHCR_REGISTRY_PASSWORD: ${{ secrets.PACKAGES_TOKEN }}
 
 jobs:
-
   create-latest-image:
-    environment: 'develop'
     name: Create branch docker image
     runs-on: ubuntu-latest
     steps:
@@ -26,11 +25,9 @@ jobs:
         uses: actions/checkout@v3
 
       -
-        # Create lowercase string like: /waves-ducks-team/duck-incubator-api
-        # ${GITHUB_REF##*/} -> branch name (master / develop)
         name: Create tag image
         run: |
-          echo "GHCR_IMAGE=${{ env.GHCR_REGISTRY_HOST }}/${GITHUB_REPOSITORY,,}:${GITHUB_REF##*/}" >> ${GITHUB_ENV}
+          echo "GHCR_IMAGE=${{ env.GHCR_REGISTRY_HOST }}/${GITHUB_REPOSITORY,,}:${GITHUB_REF#refs/tags/}" >> ${GITHUB_ENV}
 
       -
         name: Set up QEMU
