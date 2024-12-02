@@ -1,4 +1,4 @@
-FROM gcr.io/google.com/cloudsdktool/cloud-sdk:latest
+FROM gcr.io/google.com/cloudsdktool/google-cloud-cli:stable
 
 LABEL org.label-schema.name="Kubernates tools" \
       org.label-schema.description="Kubernates tools" \
@@ -9,7 +9,7 @@ LABEL org.label-schema.name="Kubernates tools" \
 ENV DEBIAN_FRONTEND=noninteractive
 
 # Install packages
-RUN apt-get update -y && apt-get install -y curl unzip groff jq bc netcat nodejs npm
+RUN apt-get update -y && apt-get install -y curl unzip groff jq bc nodejs npm
 
 # Download and unzip install
 RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" && \
