@@ -1,9 +1,9 @@
 FROM gcr.io/google.com/cloudsdktool/cloud-sdk:latest
 
-LABEL org.label-schema.vendor="Kubernates tools" \
-      org.label-schema.name="Kubernates tools" \
+LABEL org.label-schema.name="Kubernates tools" \
       org.label-schema.description="Kubernates tools" \
-      org.label-schema.schema-version="2.0" \
+      org.label-schema.schema-version="3.0" \
+      org.label-schema.author="Albert Iblyaminov" \
       org.opencontainers.image.source="https://github.com/rieset/kubernates-tools"
 
 ENV DEBIAN_FRONTEND=noninteractive
